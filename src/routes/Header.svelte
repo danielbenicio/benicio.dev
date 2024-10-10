@@ -2,15 +2,15 @@
   const tags = [
     {
       name: "About",
-      href: "/",
+      href: "#",
     },
     {
       name: "Technologies",
-      href: "/",
+      href: "#",
     },
     {
       name: "Contact",
-      href: "/",
+      href: "#",
     }
   ];
 </script>
