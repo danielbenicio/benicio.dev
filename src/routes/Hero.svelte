@@ -1,4 +1,6 @@
-<script>
+<script lang="ts">
+  import { onMount } from 'svelte';
+
   const achievements = [
     {
       decription: "Years",
@@ -17,11 +19,84 @@
       quantity: 50
     },
   ]
+
+  let animatedCounts = achievements.map(achievement => ({ ...achievement, current: 0 }));
+
+  function animateCount(element: HTMLElement | null, target: number) {
+    const duration = 2000; 
+    const stepTime = Math.abs(Math.floor(duration / target));
+    let count = 0;
+
+    const interval = setInterval(() => {
+      count += 1;
+      element!.textContent = `${count}+`;
+
+      if (count === target) {
+        clearInterval(interval);
+      }
+    }, stepTime);
+  }
+
+  onMount(() => {
+    animatedCounts.forEach((achievement, index) => {
+      const targetElement = document.getElementById(`achievement-${index}`);
+      animateCount(targetElement, achievement.quantity);
+    });
+  });
+
+    let phrases = [
+    "Front-end Developer",
+    "Back-end Developer",
+    "Cloud Developer",
+    "Daniel Benício"
+  ];
+
+  let currentPhrase = phrases[0];
+  let currentIndex = 0;
+
+  const writeSpeed = 100;  // Velocidade para escrever cada letra
+  const eraseSpeed = 50;   // Velocidade para apagar cada letra
+  const pauseBetween = 2000; // Pausa entre frases
+
+  function animateText() {
+    let text = "";
+    let phase = 'writing'; // Controla se estamos escrevendo ou apagando
+    let letterIndex = 0;
+
+    const interval = setInterval(() => {
+      if (phase === 'writing') {
+        if (letterIndex < phrases[currentIndex].length) {
+          text += phrases[currentIndex][letterIndex++];
+          currentPhrase = text;
+        } else {
+          phase = 'pausing';
+          setTimeout(() => {
+            phase = 'erasing';
+          }, pauseBetween);
+        }
+      } else if (phase === 'erasing') {
+        if (letterIndex > 0) {
+          text = text.slice(0, -1);
+          currentPhrase = text;
+          letterIndex--;
+        } else {
+          phase = 'writing';
+          currentIndex = (currentIndex + 1) % phrases.length; // Passa para a próxima frase
+        }
+      }
+    }, phase === 'writing' ? writeSpeed : eraseSpeed);
+
+    return () => clearInterval(interval); // Limpa o intervalo quando o componente é destruído
+  }
+
+  onMount(() => {
+    animateText();
+  });
 </script>
 
 <section>
   <div class="intro">
-    <h1>Hello, i'm<br /> Front-end Developer</h1>
+    <h1>Hello, I'm<br /> {currentPhrase}</h1>
     <span>
       I am a full-stack and cloud developer passionate<br />
       about programming and problem-solving.
@@ -29,17 +104,19 @@
   </div>
 
   <div class="achievements-container">
-    {#each achievements as achievement}
+    {#each animatedCounts as achievement, index}
       <div>
-        <h1>{achievement.quantity}+</h1>
+        <h1 id="achievement-{index}">{achievement.current}+</h1>
         <span>{achievement.decription}</span>
       </div>
     {/each}
   </div>
 
-  <button class="floating-button">
-    &#8595; 
-  </button>
+  <div class="floating-button-container">
+    <button class="floating-button">
+      &#8595; 
+    </button>
+  </div>
 </section>
 
 <style>
@@ -82,10 +159,14 @@
     margin-bottom: 4px;
   }
 
+  .floating-button-container {
+    margin-top: 1.25rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   .floating-button {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
     transform: translateX(-50%);
     width: 70px;
     height: 70px;
@@ -100,5 +181,15 @@
     cursor: pointer;
     transition: background-color 0.3s;
     color: gray;
+    animation: floating 2s ease-in-out infinite;
   }
+
+  @keyframes floating {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
 </style>
