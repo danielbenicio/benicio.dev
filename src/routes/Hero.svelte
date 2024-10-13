@@ -59,7 +59,7 @@
   const pauseBetween = 2000; // Pausa entre frases
 
   function animateText() {
-    let text = "";
+    let text = "  ";
     let phase = 'writing'; // Controla se estamos escrevendo ou apagando
     let letterIndex = 0;
 
@@ -96,7 +96,13 @@
 
 <section>
   <div class="intro">
-    <h1>Hello, I'm<br /> {currentPhrase}</h1>
+    <h1>Hello, I'm<br />
+      {#if currentPhrase.length > 2}
+        {currentPhrase}
+      {:else}
+        <span style="visibility: hidden;">placeholder</span>
+      {/if}
+    </h1>
     <span>
       I am a full-stack and cloud developer passionate<br />
       about programming and problem-solving.
@@ -132,12 +138,14 @@
     font-size: 4rem;
     font-weight: 800;
     line-height: 1.4;
+     min-width: 200px;
     margin-bottom: 1rem;
   }
 
   .intro span {
     font-size: 0.875rem;
-    font-weight: 400;
+    font-weight: 600;
+    color: rgb(180, 166, 166);
   }
 
   .achievements-container {

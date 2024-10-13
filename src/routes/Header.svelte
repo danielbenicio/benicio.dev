@@ -36,6 +36,7 @@
 
   h2 {
   font-weight: 600;
+  font-family: 'JetBrains Mono';
  }
   
  .dot {
@@ -53,7 +54,13 @@
 
  a {
   text-decoration: none;
-  color: gray;
-  font-weight: 500;
- }
+  color: rgb(136, 121, 121);
+  font-weight: 600;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+a:hover {
+  color: rgb(110, 98, 98);
+  opacity: 0.8;
+}
 </style>
