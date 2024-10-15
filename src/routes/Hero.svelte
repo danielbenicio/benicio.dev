@@ -175,6 +175,7 @@
   }
 
   .floating-button {
+    margin-bottom: 10rem;
     transform: translateX(-50%);
     width: 70px;
     height: 70px;
