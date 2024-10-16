@@ -89,6 +89,7 @@
 
 <style>
   .about-section {
+    margin-bottom: 8rem;
     height: 84vh;
     width: 100%;
   }
