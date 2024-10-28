@@ -1,8 +1,11 @@
 <script>
 	import About from './About.svelte';
+	import Contact from './Contact.svelte';
+	import Footer from './Footer.svelte';
 	import Header from './Header.svelte';
 	import Hero from './Hero.svelte';
 	import Projects from './Projects.svelte';
+	import Skills from './Skills.svelte';
 </script>
 
 <svelte:head>
@@ -15,6 +18,13 @@
 	<Hero />
 	<About />
 	<Projects />
+	<Skills />
+	<Contact />
 </section>
+<Footer />
 
-<style></style>
+<style>
+	section {
+		padding: 2.75rem 8.375rem;
+	}
+</style>

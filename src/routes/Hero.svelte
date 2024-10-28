@@ -181,7 +181,7 @@
     height: 70px;
     border-radius: 50%;
     border: none;
-    background-color: #20273F;
+    background-color: #27272B;
     color: white;
     font-size: 22px;
     display: flex;

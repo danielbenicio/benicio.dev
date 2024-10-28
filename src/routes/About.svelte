@@ -5,30 +5,30 @@
   const careers = [
     {
       company: "l2d",
-      logo: "/lab2dev.png",
+      logo: "/companies/lab2dev.png",
       period: "2022 - Present",
       position: "Full Stack Developer Mid"
     },
     {
       company: "l2d",
-      logo: "/lab2dev.png",
+      logo: "/companies/lab2dev.png",
       period: "2022 - Present",
       position: "Front End Developer Jr"
     },
     {
       company: "IT Power",
-      logo: "/itpower.png",
+      logo: "/companies/itpower.png",
       period: "2021 - 2021",
       position: "Front End Developer Jr"
     }
   ];
 
   const textSpans = [
-    "Sou um desenvolvedor full-stack apaixonado por programação e tecnologias da nuvem, com foco em entregar soluções robustas e eficientes que resolvam as necessidades dos clientes e aprimorem a experiência do produto. Com 22 anos, comecei a programar aos 14, e desde então venho aprimorando minhas habilidades, sempre com o objetivo de transformar ideias em realidade por meio da tecnologia.",
-    "Minha jornada profissional começou logo após o ensino médio, quando consegui uma posição de estágio graças ao meu excelente desempenho no curso técnico de TI. Esse foi um marco que consolidou minha paixão pela programação e me impulsionou a buscar cada vez mais conhecimento. Atualmente, estou cursando Engenharia da Computação pela Universidade São Judas Tadeu (USJT), o que complementa minha formação técnica com uma sólida base acadêmica.",
-    "Em fevereiro de 2022, ingressei na Lab2Dev como desenvolvedor júnior e, através de muito trabalho e dedicação, fui promovido a desenvolvedor pleno. Ao longo da minha trajetória na empresa, tive a oportunidade de colaborar em projetos de grande relevância para gigantes como Whirlpool, Gerdau e o Hospital Albert Einstein. Nessas experiências, pude aplicar minhas habilidades com tecnologias como React, Next.js, Node.js e, principalmente, AWS, desenvolvendo soluções escaláveis e seguras na nuvem.",
-    "Além da programação, sou apaixonado por design, o que me permite unir estética e funcionalidade em soluções tecnológicas. Buscando sempre me aperfeiçoar, fiz cursos como o Ignite da Rocketseat, o curso de design uiStart e JSTACK, que expandiram minhas habilidades e me deram uma visão ainda mais abrangente sobre o desenvolvimento full-stack.",
-    "Sou apaixonado pelo que faço e estou sempre buscando novas formas de me desafiar, aprender e contribuir com o sucesso dos projetos que participo. Meu foco é sempre entregar resultados que agreguem valor, tanto para os clientes quanto para os usuários finais, garantindo a excelência na execução e na inovação tecnológica."
+    "I am a full-stack developer passionate about programming and cloud technologies, focused on delivering robust and efficient solutions that meet clients' needs and enhance the product experience. At 22 years old, I started programming at 14 and have continuously refined my skills, with the goal of turning ideas into reality through technology.",
+    "My professional journey began right after high school when I secured an internship due to my outstanding performance in a technical IT course. This was a pivotal moment that solidified my love for programming and drove me to seek more knowledge. Currently, I am pursuing a degree in Computer Engineering at São Judas Tadeu University (USJT), complementing my technical training with a solid academic foundation.",
+    "In February 2022, I joined Lab2Dev as a junior developer, and through hard work and dedication, I was promoted to a mid-level developer. During my time with the company, I have had the opportunity to collaborate on high-impact projects for major clients like Whirlpool, Gerdau, and the Albert Einstein Hospital. In these experiences, I have applied my skills with technologies such as React, Next.js, Node.js, and especially AWS, developing scalable and secure cloud solutions.",
+    "Besides programming, I am passionate about design, which allows me to combine aesthetics and functionality in technological solutions. Always seeking to improve, I have taken courses like Rocketseat's Ignite, the uiStart design course, and JSTACK, which have expanded my skills and given me a broader view of full-stack development.",
+    "I am passionate about what I do and am constantly looking for new ways to challenge myself, learn, and contribute to the success of the projects I participate in. My focus is always on delivering results that add value to both clients and end users, ensuring excellence in execution and technological innovation."
   ];
 
   let visibleSpans = 0;
@@ -114,7 +114,8 @@
   }
 
   .career-history span {
-    font-size: 16px;
+    font-family: 'JetBrains Mono';
+    font-size: 14px;
     font-weight: 200;
     line-height: 24px; 
   }
@@ -133,7 +134,7 @@
   .career-item {
   display: flex;
   align-items: center;
-  background-color: #3C2647;
+  background-color:  #27272B;
   padding: 32px 40px;
   border-radius: 8px;
   position: relative;
