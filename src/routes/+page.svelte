@@ -9,7 +9,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
+	<title>Daniel Benício | Software Development & Cloud</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 

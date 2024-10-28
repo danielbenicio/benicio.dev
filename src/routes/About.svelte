@@ -174,7 +174,7 @@
     font-size: 16px;
   }
 
-  @media (min-width: 1440px) {
+  @media (max-width: 1440px) {
     .career-history span {
       font-size: 12px
     }

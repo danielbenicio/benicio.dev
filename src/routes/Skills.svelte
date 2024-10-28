@@ -211,7 +211,7 @@
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (max-width: 1440px) {
     .skills-section {
       margin-top: 6rem;
       height: 100vh;
