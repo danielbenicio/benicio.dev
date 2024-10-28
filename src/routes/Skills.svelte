@@ -211,10 +211,15 @@
     }
   }
 
-  @media (max-width: 1440px) {
+  @media (min-width: 1440px) {
+    .skills-section {
+      margin-top: 6rem;
+      height: 100vh;
+    }
+
     .skill-card {
-      width: 340px;
-      height: 420px;
+      width: 330px;
+      height: 410px;
     }
 
     .skill-cards-container {
