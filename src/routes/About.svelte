@@ -183,4 +183,14 @@
       display: none;
    }
   }
+
+  @media (max-width: 1800px) {
+    .career-history span {
+      font-size: 12px
+    }
+
+    .career-history span:last-child {
+      display: none;
+   }
+  }
 </style>
