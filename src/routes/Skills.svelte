@@ -86,7 +86,7 @@
 <style>
   .skills-section {
     margin-top: 6rem;
-    height: 95vh;
+    height: 98vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -209,5 +209,16 @@
     100% {
       transform: translateX(-50%);
     }
+  }
+
+  @media (max-width: 1440px) {
+    .skill-card {
+      width: 340px;
+      height: 420px;
+    }
+
+    .skill-cards-container {
+      margin-bottom: 6rem;
+   }
   }
 </style>

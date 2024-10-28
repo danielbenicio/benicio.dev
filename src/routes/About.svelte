@@ -119,7 +119,7 @@
     font-weight: 200;
     line-height: 24px; 
   }
-
+  
   .career-timeline {
     height: 80%;
     align-items: center;
@@ -172,5 +172,15 @@
   .career-info h3 {
     margin: 5px 0 0;
     font-size: 16px;
+  }
+
+  @media (max-width: 1440px) {
+    .career-history span {
+      font-size: 12px
+    }
+
+    .career-history span:last-child {
+      display: none;
+   }
   }
 </style>
