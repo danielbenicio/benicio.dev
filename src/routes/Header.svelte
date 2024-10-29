@@ -35,32 +35,49 @@
   }
 
   h2 {
-  font-weight: 600;
-  font-family: 'JetBrains Mono';
- }
+    font-weight: 600;
+    font-family: 'JetBrains Mono';
+  }
   
- .dot {
-  color: #7D2D9D;
- }
+  .dot {
+    color: #7D2D9D;
+  }
 
   span {
-  color: gray;
- }
+    color: gray;
+  }
 
- .navbar {
-  display: flex;
-  gap:  2.625rem;
- }
+  .navbar {
+    display: flex;
+    gap: 2.625rem;
+  }
 
- a {
-  text-decoration: none;
-  color: rgb(136, 121, 121);
-  font-weight: 600;
-  transition: color 0.3s ease, opacity 0.3s ease;
-}
+  a {
+    text-decoration: none;
+    color: rgb(136, 121, 121);
+    font-weight: 600;
+    transition: color 0.3s ease, opacity 0.3s ease;
+  }
 
-a:hover {
-  color: rgb(110, 98, 98);
-  opacity: 0.8;
-}
+  a:hover {
+    color: rgb(110, 98, 98);
+    opacity: 0.8;
+  }
+
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 768px) {
+    .website-name {
+      justify-content: center;
+    }
+    
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      font-family: 'JetBrains Mono';
+    }
+
+    .navbar {
+      display: none; /* Oculta o navbar */
+    }
+  }
 </style>

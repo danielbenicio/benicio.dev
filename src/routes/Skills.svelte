@@ -242,4 +242,118 @@
       margin-bottom: 6rem;
    }
   }
+
+  @media (max-width: 768px) {
+    .skills-section {
+      margin-top: 4rem;
+      height: 100%;
+    }
+
+    .skills-label-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .skills-label-container > h1 {
+      font-size: 34px;
+    }
+
+    .skills-label-container > span {
+      font-size: 14px;
+    }
+
+    .skill-cards-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 4rem;
+    }
+
+    .skill-card {
+      width: 300px;
+      height: 380px;
+      border: 1px solid #5F5B5B;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .icon-container {
+      border-radius: 4px;
+      border: 1px solid rgba(95, 91, 91, 0.20);
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .skill-card > span {
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 18px;
+      opacity: 0.70;
+    }
+
+    .skills-carousel-wrapper {
+      width: 100%;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .skills-carousel {
+      display: flex;
+      gap: 10px;
+      animation: scroll 40s linear infinite;
+      width: max-content;
+    }
+
+    .skills-carousel img {
+      width: 60px;
+      height: 60px;
+      border-radius: 12px;
+      object-fit: contain;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    .skills-carousel .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .skills-carousel .skill-item:hover img {
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+
+    .skills-carousel .skill-item:hover .skill-name {
+      opacity: 1;
+    }
+
+    .skills-carousel .skill-item:hover .skill-box {
+      display: flex;
+    }
+
+    .skill-box {
+      background: #27272B;
+      padding: 2px 10px;
+      border-radius: 6px;
+      display: none;
+      transition: display 0.10s;
+    }
+
+    .skill-name {
+      font-size: 12px;
+      font-weight: 600;
+      opacity: 0;
+      transition: opacity 0.10s;
+      color: #FFF;
+    }
+  }
 </style>

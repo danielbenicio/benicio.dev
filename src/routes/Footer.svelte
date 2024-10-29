@@ -43,4 +43,41 @@
     font-weight: 500;
     opacity: 0.6;
   }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      margin-top: 4rem;
+      background: #27272B;
+      padding: 1rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .name-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .name {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+
+    .rights {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.6;
+    }
+
+    .up-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 500;
+      opacity: 0.6;
+    }
+  }
 </style>

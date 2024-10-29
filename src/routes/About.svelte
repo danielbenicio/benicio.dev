@@ -193,4 +193,89 @@
       display: none;
    }
   }
+
+  @media (max-width: 768px) {
+    .about-section {
+      margin-bottom: 8rem;
+      height: 100%;
+      width: 100%;
+    }
+
+    .about-section h1 {
+      color: gray;
+    }
+
+		.career {
+      margin-top: 1rem;
+      flex-direction: column;
+    }
+
+    .career-history {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2.125rem;
+      margin-bottom: 3rem;
+    }
+
+    .career-history span {
+      font-family: 'JetBrains Mono';
+      font-size: 12px;
+      font-weight: 300;
+      line-height: 20px; 
+    }
+    
+    .career-timeline {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .career-item {
+      display: flex;
+      align-items: center;
+      background-color:  #27272B;
+      padding: 18px 30px;
+      border-radius: 8px;
+      position: relative;
+      animation: floating 2s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%, 100% {
+        transform: translateY(0); /* Não alterar a posição horizontal */
+      }
+      50% {
+        transform: translateY(-10px); /* Mover apenas para cima */
+      }
+    }
+
+    .company-logo {
+      border-radius: 6px;
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .career-info {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .career-info span {
+      font-size: 10px;
+      opacity: 0.6;
+      font-weight: 600;
+    }
+
+    .career-info h3 {
+      margin: 5px 0 0;
+      font-size: 12px;
+    }
+  }
 </style>

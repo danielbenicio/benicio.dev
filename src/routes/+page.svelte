@@ -27,4 +27,10 @@
 	section {
 		padding: 2.75rem 8.375rem;
 	}
+
+	@media (max-width: 768px) {
+		section {
+			padding: 1rem 2rem;
+		}
+  }
 </style>

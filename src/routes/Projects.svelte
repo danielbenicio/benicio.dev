@@ -133,4 +133,78 @@
     right: 0;
     background: linear-gradient(to left, rgba(24, 24, 27, 1), rgba(24, 24, 27, 0)); /* Transição mais longa */
   }
+
+  @media (max-width: 768px) {
+		.projects-section {
+      height: 100%;
+      width: 100%;
+    }
+
+    .clients-container {
+      margin-top: -240px;
+      width: 100%;
+      height: 10%;
+      display: flex;
+      align-items: normal;
+      justify-content: normal;
+      background: none;
+      background-size: none;  
+    }
+
+    .clients-container h1 {
+      font-size: 26px;
+      text-align: center;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .enterprises-container {
+      margin-top: -50px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .enterprises-container span {
+      color: gray;
+      font-weight: 700;
+    }
+
+    .enterprises-carousel-wrapper {
+      width: 100%;
+      max-width: 1500px;
+      overflow: hidden;
+      margin: 0 auto;
+      position: relative; /* Added to position blur elements */
+    }
+
+    .enterprises-carousel {
+      display: flex;
+      gap: 20px;
+      animation: scroll 30s linear infinite; /* Changed to 30s */
+      width: calc(200px * 14 + 20px * 13);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-200px * 12 - 20px * 12));
+      }
+    }
+
+    .enterprises-card {
+      border-radius: 6px;
+      border: 1px solid #5F5B5B;
+      background: #18181b;
+      width: 200px;
+      height: 90px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 </style>

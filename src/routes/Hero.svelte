@@ -138,7 +138,7 @@
     font-size: 4rem;
     font-weight: 800;
     line-height: 1.4;
-     min-width: 200px;
+    min-width: 200px;
     margin-bottom: 1rem;
   }
 
@@ -194,11 +194,85 @@
   }
 
   @keyframes floating {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-10px);
+    }
   }
-  50% {
-    transform: translateX(-50%) translateY(-10px);
+
+  @media (max-width: 768px) {
+    section{
+      margin-top: 4rem;
+    }
+
+    .intro h1 {
+      font-size: 26px;
+    }
+
+    .intro span {
+      display: none;
+    }
+    
+    .achievements-container {
+      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: 90px 90px;
+    }
+
+    .achievements-container div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .achievements-container h1 {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .achievements-container span {
+      font-size: 14px;
+    }
+
+    .floating-button-container {
+      margin-top: 4rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .floating-button {
+      transform: none;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: none;
+      background-color: #27272B;
+      color: gray;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      animation: float 2s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0); /* Posição inicial */
+    }
+    50% {
+      transform: translateY(-10px); /* Sobe 10px */
+    }
+    100% {
+      transform: translateY(0); /* Volta à posição inicial */
+    }
   }
 }
 </style>

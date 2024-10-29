@@ -84,4 +84,33 @@
     color: white;
   }
 
+  @media (max-width: 768px) {
+		.contact-section {
+      margin-top: 3rem;
+    }
+
+    .contact-section > h1 {
+      font-size: 30px;
+      margin-bottom: 4rem;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 50px
+    }
+
+    .contact-container img {
+      width: 300px;
+      height: 400px;
+    } 
+
+    .contact-cards-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
 </style>
