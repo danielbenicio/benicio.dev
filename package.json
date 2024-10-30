@@ -31,6 +31,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"lucide-svelte": "^0.453.0"
+		"lucide-svelte": "^0.453.0",
+		"svelte-inview": "^4.0.4"
 	}
 }

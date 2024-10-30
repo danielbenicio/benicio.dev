@@ -121,7 +121,7 @@
 
   .skill-card {
     width: 360px;
-    height: 450px;
+    height: 420px;
     border-radius: 6px;
     border: 1px solid #5F5B5B;
     background: #18181B;
@@ -211,7 +211,7 @@
     }
   }
 
-  @media (min-width: 1440px) {
+  @media (max-width: 1440px) {
     .skills-section {
       margin-top: 6rem;
       height: 100vh;
@@ -227,7 +227,7 @@
    }
   }
 
-  @media (min-width: 1800px) {
+  @media (max-width: 1800px) {
     .skills-section {
       margin-top: 6rem;
       height: 100vh;

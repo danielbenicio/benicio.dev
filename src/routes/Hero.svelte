@@ -21,6 +21,8 @@
   ]
 
   let animatedCounts = achievements.map(achievement => ({ ...achievement, current: 0 }));
+  let introVisible = false;
+  let contentVisible = false;
 
   function animateCount(element: HTMLElement | null, target: number) {
     const duration = 2000; 
@@ -29,7 +31,7 @@
 
     const interval = setInterval(() => {
       count += 1;
-      element!.textContent = `${count}+`;
+      if (element) element.textContent = `${count}+`;
 
       if (count === target) {
         clearInterval(interval);
@@ -38,13 +40,26 @@
   }
 
   onMount(() => {
-    animatedCounts.forEach((achievement, index) => {
-      const targetElement = document.getElementById(`achievement-${index}`);
-      animateCount(targetElement, achievement.quantity);
-    });
+    // Primeiro, mostra o intro
+    setTimeout(() => {
+      introVisible = true;
+      
+      // Depois de 1 segundo, mostra o resto do conteúdo
+      setTimeout(() => {
+        contentVisible = true;
+        
+        // Inicia a animação dos números apenas depois que o conteúdo estiver visível
+        animatedCounts.forEach((achievement, index) => {
+          const targetElement = document.getElementById(`achievement-${index}`);
+          animateCount(targetElement, achievement.quantity);
+        });
+      }, 1000);
+    }, 100);
+
+    animateText();
   });
 
-    let phrases = [
+  let phrases = [
     "Front-end Developer",
     "Back-end Developer",
     "Cloud Developer",
@@ -54,13 +69,13 @@
   let currentPhrase = phrases[0];
   let currentIndex = 0;
 
-  const writeSpeed = 100;  // Velocidade para escrever cada letra
-  const eraseSpeed = 50;   // Velocidade para apagar cada letra
-  const pauseBetween = 2000; // Pausa entre frases
+  const writeSpeed = 100;
+  const eraseSpeed = 50;
+  const pauseBetween = 2000;
 
   function animateText() {
     let text = "  ";
-    let phase = 'writing'; // Controla se estamos escrevendo ou apagando
+    let phase = 'writing';
     let letterIndex = 0;
 
     const interval = setInterval(() => {
@@ -81,21 +96,17 @@
           letterIndex--;
         } else {
           phase = 'writing';
-          currentIndex = (currentIndex + 1) % phrases.length; // Passa para a próxima frase
+          currentIndex = (currentIndex + 1) % phrases.length;
         }
       }
     }, phase === 'writing' ? writeSpeed : eraseSpeed);
 
-    return () => clearInterval(interval); // Limpa o intervalo quando o componente é destruído
+    return () => clearInterval(interval);
   }
-
-  onMount(() => {
-    animateText();
-  });
 </script>
 
 <section>
-  <div class="intro">
+  <div class="intro" class:visible={introVisible}>
     <h1>Hello, I'm<br />
       {#if currentPhrase.length > 2}
         {currentPhrase}
@@ -109,19 +120,21 @@
     </span>
   </div>
 
-  <div class="achievements-container">
-    {#each animatedCounts as achievement, index}
-      <div>
-        <h1 id="achievement-{index}">{achievement.current}+</h1>
-        <span>{achievement.decription}</span>
-      </div>
-    {/each}
-  </div>
+  <div class="content-wrapper" class:visible={contentVisible}>
+    <div class="achievements-container">
+      {#each animatedCounts as achievement, index}
+        <div>
+          <h1 id="achievement-{index}">{achievement.current}+</h1>
+          <span>{achievement.decription}</span>
+        </div>
+      {/each}
+    </div>
 
-  <div class="floating-button-container">
-    <button class="floating-button">
-      &#8595; 
-    </button>
+    <div class="floating-button-container">
+      <button class="floating-button">
+        &#8595; 
+      </button>
+    </div>
   </div>
 </section>
 
@@ -132,6 +145,25 @@
 
   .intro {
     text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .intro.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .content-wrapper {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .content-wrapper.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .intro h1 {
@@ -261,18 +293,18 @@
       cursor: pointer;
       transition: background-color 0.3s;
       animation: float 2s ease-in-out infinite;
-  }
+    }
 
-  @keyframes float {
-    0% {
-      transform: translateY(0); /* Posição inicial */
-    }
-    50% {
-      transform: translateY(-10px); /* Sobe 10px */
-    }
-    100% {
-      transform: translateY(0); /* Volta à posição inicial */
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
     }
   }
-}
 </style>
