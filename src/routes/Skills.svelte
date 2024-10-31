@@ -247,8 +247,8 @@
     }
 
     .skill-card {
-      width: 330px;
-      height: 410px;
+      width: 340px;
+      height: 420px;
     }
 
     .skill-cards-container {
