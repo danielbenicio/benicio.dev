@@ -13,12 +13,12 @@
   ];
 </script>
 
-<div class="projects-section">
-  <h1>Projects</h1>
+<div class="projects-section" id="projects">
+  <h1>Projetos</h1>
   <div class="clients-container">
-    <h1>I am trusted by growing companies around the world</h1>
+    <h1>Empresas em crescimento ao redor do mundo confiam no meu trabalho</h1>
     <div class="enterprises-container">
-      <span>Some enterprises I worked on:</span>
+      <span>Algumas das empresas em que trabalhei:</span>
       <div class="enterprises-carousel-wrapper">
         <div class="enterprises-carousel">
           {#each [...enterprises, ...enterprises] as enterprise}

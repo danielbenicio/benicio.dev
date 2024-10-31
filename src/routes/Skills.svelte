@@ -40,7 +40,7 @@
   ];
 </script>
 
-<div class="skills-section">
+<div class="skills-section" id="technologies">
   <div class="skills-label-container">
     <h1>SKILLS</h1>
     <span>Fullstack Cloud Developer</span>
@@ -51,24 +51,30 @@
         <Tv size={24} color="#6366f1" strokeWidth={1.5} />
       </div>
       <h3>Frontend development</h3>
-      <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+      <span>
+        Crio <b>interfaces modernas</b>, <b>dinâmicas</b> e <b>responsivas</b>, projetadas para proporcionar uma <b>experiência de usuário excepcional</b>. Meu trabalho é focado em <b>performance</b> e <b>qualidade</b>, utilizando <b>técnicas avançadas de estilização</b>, <b>componentização eficiente</b> e os <b>frameworks mais modernos de front-end</b> para entregar interfaces <b>rápidas</b>, <b>intuitivas</b> e <b>escaláveis</b>. Aplicando as <b>melhores práticas</b> em <b>gerenciamento de estado</b>, <b>design UX</b> e <b>princípios de código limpo</b>, garanto que as aplicações permaneçam <b>fluidas</b>, <b>responsivas</b> e <b>otimizadas</b> para todos os <b>dispositivos</b> e <b>tamanhos de tela</b>.
+      </span>
     </div>
     <div class="skill-card">
       <div class="icon-container">
         <Settings size={24} color="#6366f1" strokeWidth={1.5}/>
       </div>
       <h3>Backend development</h3>
-      <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+      <span>
+        Desenvolvo sistemas <b>robustos</b> e <b>eficientes</b> que garantem a <b>segurança</b>, <b>escalabilidade</b> e <b>performance</b> das suas aplicações. Com experiência na construção de <b>APIs</b> e <b>arquiteturas modernas</b>, foco na integração perfeita entre <b>serviços</b> e <b>dados</b>, sempre acompanhada de uma <b>documentação clara</b> e <b>testes rigorosos</b> para garantir <b>estabilidade</b> e <b>manutenção contínua</b>. Cada projeto se beneficia de uma abordagem <b>estruturada</b>, otimizando tanto para <b>funcionalidade</b> quanto para <b>longevidade</b>, assegurando que suas aplicações funcionem de maneira <b>suave</b> e <b>confiável</b>.
+      </span>
     </div>
     <div class="skill-card">
       <div class="icon-container">
         <Cloud size={24} color="#6366f1" strokeWidth={1.5} />
       </div>
       <h3>Cloud development</h3>
-      <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
+      <span>
+        Sou especializado em desenvolvimento na nuvem, utilizando principalmente a <b>AWS</b> para construir aplicações <b>escaláveis</b>, <b>seguras</b> e de alto desempenho. Com expertise em serviços como <b>Lambda</b>, <b>EC2</b>, <b>DynamoDB</b> e <b>S3</b>, projeto arquiteturas que otimizam a eficiência de recursos e a resiliência. Minha abordagem integra as melhores práticas em <b>infraestrutura como código</b>, <b>pipelines de CI/CD</b> e monitoramento, garantindo aplicações ágeis, disponíveis e econômicas. Através de planejamento cuidadoso e automação, entrego soluções em nuvem que apoiam o crescimento dos negócios.
+      </span>
     </div>
   </div>
-  <span style=" font-size: 16px; color: gray; font-weight: 700; margin-bottom: 2rem;">Some of technologies i worked:</span>
+  <span style=" font-size: 16px; color: gray; font-weight: 700; margin-bottom: 2rem;">Ferramentas que utilizo:</span>
   <div class="skills-carousel-wrapper">
     <div class="skills-carousel">
       {#each [...skills, ...skills] as skill}
@@ -142,7 +148,14 @@
   .skill-card > span {
     font-size: 12px;
     font-weight: 500;
-    opacity: 0.70;
+    opacity: 0.60;
+  }
+
+  .skill-card  b {
+    font-size: 12px;
+    font-weight: 800;
+    color: white;
+    opacity: 1;
   }
 
   .skills-carousel-wrapper {

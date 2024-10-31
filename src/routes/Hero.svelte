@@ -3,7 +3,7 @@
 
   const achievements = [
     {
-      decription: "Years",
+      decription: "Anos",
       quantity: 3
     },
     {
@@ -11,11 +11,11 @@
       quantity: 300
     },
     {
-      decription: "Technologies",
+      decription: "Tecnologias",
       quantity: 20
     },
     {
-      decription: "Projects",
+      decription: "Projetos",
       quantity: 50
     },
   ]
@@ -103,6 +103,17 @@
 
     return () => clearInterval(interval);
   }
+
+  function smoothScroll(event: { preventDefault: () => void; }, targetId: string) {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
 </script>
 
 <section>
@@ -115,8 +126,8 @@
       {/if}
     </h1>
     <span>
-      I am a full-stack and cloud developer passionate<br />
-      about programming and problem-solving.
+      Sou um desenvolvedor Fullstack & Cloud apaixonado <br />
+      por programação e resolução de problemas.
     </span>
   </div>
 
@@ -131,9 +142,9 @@
     </div>
 
     <div class="floating-button-container">
-      <button class="floating-button">
+      <a class="floating-button" href="#about" on:click={(event) => smoothScroll(event, "about")}>
         &#8595; 
-      </button>
+      </a>
     </div>
   </div>
 </section>
@@ -209,6 +220,7 @@
   .floating-button {
     margin-bottom: 10rem;
     transform: translateX(-50%);
+    text-decoration: none;
     width: 70px;
     height: 70px;
     border-radius: 50%;

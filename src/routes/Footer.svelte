@@ -1,5 +1,20 @@
 <script>
 	import { ChevronUp } from "lucide-svelte";
+
+    /**
+	 * @param {MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement; }} event
+	 * @param {string} targetId
+	 */
+   function smoothScroll(event, targetId) {
+    event.preventDefault();
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }
 </script>
 
 <div class="footer-container">
@@ -7,10 +22,10 @@
     <span class="name">© 2024 - Daniel Benício.</span>
     <span class="rights">Todos os direitos reservados</span>
   </div>
-  <div class="up-container">
-    <ChevronUp />
+  <a class="up-container" href="#header" on:click={(event) => smoothScroll(event, "header")}>
+    <ChevronUp color="gray" />
     <span>Voltar do início</span>
-  </div>
+  </a>
 </div>
 
 <style>
@@ -36,13 +51,31 @@
   }
 
   .up-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 500;
-    opacity: 0.6;
-  }
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.6;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.up-container span {
+  text-decoration: none;
+  color: gray;
+  transition: color 0.3s ease;
+}
+
+.up-container:hover {
+  color: white;
+  opacity: 1;
+}
+
+.up-container:hover span {
+  color: white;
+}
 
   @media (max-width: 768px) {
     .footer-container {

@@ -16,12 +16,33 @@
 
 <style>
 	:root {
-    --gray: #A59898;
-  }
+		--gray: #A59898;
+	}
 
 	body {
 		background: linear-gradient(90deg, #0A0A0B 0%, #27272B 100%);
 		font-family: 'Inter', sans-serif; 
 		color: white;
+		overflow-x: hidden;
+		overflow-y: auto; /* Permite scroll vertical */
+	}
+
+	/* Estilização da barra de rolagem */
+	::-webkit-scrollbar {
+		width: 12px; /* Largura da barra de rolagem */
+	}
+
+	::-webkit-scrollbar-track {
+		background: #27272B; /* Cor do fundo da barra de rolagem */
+		/* border-radius: 10px; */
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: #A59898; /* Cor da barra de rolagem */
+		border-radius: 10px;
+	}
+
+	::-webkit-scrollbar-thumb:hover {
+		background: #8f7d7d; /* Cor da barra de rolagem ao passar o mouse */
 	}
 </style>

@@ -3,27 +3,28 @@
 
 </script>
 
-<div class="contact-section">
-  <h1>Contact</h1>
+<div class="contact-section" id="contact">
+  <h1>Contato</h1>
   <div class="contact-container">
       <img src="/me.png" alt="me">
       <div class="contact-cards-container">
-        <a class="contact-card" href="#">
+        <a class="contact-card" href="https://www.linkedin.com/in/danielbenicio/" target="_blank">
           <Linkedin color="#6366f1" />
           Linkedin
         </a>
-        <a class="contact-card" href="#">
+        <a class="contact-card" href="https://github.com/danielbenicio" target="_blank">
           <Github color="#6366f1" />
           Github
         </a>
-        <a class="contact-card" href="#">
+        <a class="contact-card" href="mailto:danielbenicio123@gmail.com" target="_blank">
           <Mail color="#6366f1" />
-          Mail
+          Email
         </a>
-        <a class="contact-card" href="#">
+        <a class="contact-card" href="/Daniel Benício | Software Development & Cloud.pdf" target="_blank" rel="noopener noreferrer">
           <FileText color="#6366f1" />
-          CV
-        </a>
+          Currículo
+      </a>
+      
       </div>
   </div>
 </div>
